@@ -1,0 +1,18 @@
+[
+  {
+    "id": "proj-sniffer",
+    "name": "Network Sniffer & Packet Analysis",
+    "description": "Python & Scapy based network telemetry capture, packet dissection, and cybersecurity documentation.",
+    "icon": "Shield",
+    "color": "#2563eb",
+    "createdAt": "2026-09-18T10:00:00.000Z"
+  },
+  {
+    "id": "proj-sync",
+    "name": "Real-Time Sync Engine",
+    "description": "High-performance distributed database synchronization, presence channels, and conflict resolution.",
+    "icon": "Radio",
+    "color": "#059669",
+    "createdAt": "2026-09-19T08:30:00.000Z"
+  }
+]

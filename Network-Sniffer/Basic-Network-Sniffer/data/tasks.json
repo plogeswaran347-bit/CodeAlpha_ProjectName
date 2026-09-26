@@ -1,0 +1,380 @@
+[
+  {
+    "id": "task-1",
+    "projectId": "proj-sniffer",
+    "title": "Install Scapy and configure raw socket permissions",
+    "description": "Verify Python 3.8+ runtime, install Scapy library, and document Npcap / sudo privilege requirements for raw socket binding.",
+    "status": "done",
+    "priority": "high",
+    "assigneeId": "user-priya",
+    "assigneeName": "Priya Patel",
+    "assigneeAvatarColor": "#059669",
+    "dueDate": "2026-09-22",
+    "tags": [
+      "Scapy",
+      "Setup",
+      "Networking"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-1-1",
+        "title": "Verify Python 3 installation (python --version)",
+        "completed": true
+      },
+      {
+        "id": "sub-1-2",
+        "title": "Install Scapy package via pip",
+        "completed": true
+      },
+      {
+        "id": "sub-1-3",
+        "title": "Verify root/administrator socket permissions",
+        "completed": true
+      }
+    ],
+    "comments": [
+      {
+        "id": "c-1",
+        "userId": "user-priya",
+        "userName": "Priya Patel",
+        "userAvatarColor": "#059669",
+        "text": "Scapy 2.5.0 verified with Npcap on Windows and raw socket capabilities on Linux.",
+        "createdAt": "2026-09-19T14:20:00.000Z"
+      }
+    ],
+    "createdAt": "2026-09-18T11:00:00.000Z",
+    "updatedAt": "2026-09-19T14:20:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "task-2",
+    "projectId": "proj-sniffer",
+    "title": "Implement IP & TCP/UDP transport protocol dissection",
+    "description": "Construct the packet processing callback extracting Source IP, Destination IP, TTL, port numbers, flags, and total byte length.",
+    "status": "done",
+    "priority": "urgent",
+    "assigneeId": "user-priya",
+    "assigneeName": "Priya Patel",
+    "assigneeAvatarColor": "#059669",
+    "dueDate": "2026-09-23",
+    "tags": [
+      "Core",
+      "Protocol",
+      "Python"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-2-1",
+        "title": "Inspect IP layer for src and dst addresses",
+        "completed": true
+      },
+      {
+        "id": "sub-2-2",
+        "title": "Dissect TCP header: sport, dport, flags",
+        "completed": true
+      },
+      {
+        "id": "sub-2-3",
+        "title": "Dissect UDP header and calculate packet length",
+        "completed": true
+      },
+      {
+        "id": "sub-2-4",
+        "title": "Handle ICMP diagnostic packets",
+        "completed": true
+      }
+    ],
+    "comments": [
+      {
+        "id": "c-2",
+        "userId": "user-alex",
+        "userName": "Alex Rivera",
+        "userAvatarColor": "#2563eb",
+        "text": "Great work! Tested with TCP flags (SYN, ACK, PSH, FIN) and confirmed accurate parsing.",
+        "createdAt": "2026-09-19T16:00:00.000Z"
+      }
+    ],
+    "createdAt": "2026-09-18T13:00:00.000Z",
+    "updatedAt": "2026-09-19T16:00:00.000Z",
+    "version": 2
+  },
+  {
+    "id": "task-3",
+    "projectId": "proj-sniffer",
+    "title": "Develop BPF filter parser for targeted port capture",
+    "description": "Add CLI arguments using argparse (-f / --filter) to pass Berkeley Packet Filter expressions to the kernel sniffer engine.",
+    "status": "in-progress",
+    "priority": "high",
+    "assigneeId": "user-alex",
+    "assigneeName": "Alex Rivera",
+    "assigneeAvatarColor": "#2563eb",
+    "dueDate": "2026-09-24",
+    "tags": [
+      "BPF",
+      "CLI",
+      "Filtering"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-3-1",
+        "title": "Add argparse CLI flags (-i, -c, -f)",
+        "completed": true
+      },
+      {
+        "id": "sub-3-2",
+        "title": "Validate BPF syntax strings before sniffing",
+        "completed": true
+      },
+      {
+        "id": "sub-3-3",
+        "title": "Support compound filters (e.g. tcp and port 80)",
+        "completed": false
+      }
+    ],
+    "comments": [],
+    "createdAt": "2026-09-19T09:00:00.000Z",
+    "updatedAt": "2026-09-20T08:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "task-4",
+    "projectId": "proj-sniffer",
+    "title": "Implement safe ASCII & Hex payload inspection module",
+    "description": "Extract Raw packet layer data and sanitize non-printable byte sequences into formatted ASCII dots and hex previews without crashing.",
+    "status": "in-progress",
+    "priority": "medium",
+    "assigneeId": "user-priya",
+    "assigneeName": "Priya Patel",
+    "assigneeAvatarColor": "#059669",
+    "dueDate": "2026-09-25",
+    "tags": [
+      "Payload",
+      "Security",
+      "Dissection"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-4-1",
+        "title": "Check for Raw layer existence in packet",
+        "completed": true
+      },
+      {
+        "id": "sub-4-2",
+        "title": "Filter out unprintable binary control bytes",
+        "completed": true
+      },
+      {
+        "id": "sub-4-3",
+        "title": "Add truncation limit to prevent terminal flood",
+        "completed": false
+      }
+    ],
+    "comments": [],
+    "createdAt": "2026-09-19T10:00:00.000Z",
+    "updatedAt": "2026-09-20T08:30:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "task-5",
+    "projectId": "proj-sniffer",
+    "title": "Draft 16-section technical documentation and README.md",
+    "description": "Document Project Overview, Objectives, Technologies Used, Key Features, Installation, How to Run, Output Examples, and Protocol Basics.",
+    "status": "review",
+    "priority": "high",
+    "assigneeId": "user-marcus",
+    "assigneeName": "Marcus Vance",
+    "assigneeAvatarColor": "#7c3aed",
+    "dueDate": "2026-09-23",
+    "tags": [
+      "Docs",
+      "README",
+      "Cybersecurity"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-5-1",
+        "title": "Complete Sections 1-8 (Architecture & Setup)",
+        "completed": true
+      },
+      {
+        "id": "sub-5-2",
+        "title": "Detail Working Flow ASCII Diagram",
+        "completed": true
+      },
+      {
+        "id": "sub-5-3",
+        "title": "Incorporate Legal & Ethical Use Warnings",
+        "completed": true
+      },
+      {
+        "id": "sub-5-4",
+        "title": "Review against compliance standards",
+        "completed": true
+      }
+    ],
+    "comments": [
+      {
+        "id": "c-3",
+        "userId": "user-marcus",
+        "userName": "Marcus Vance",
+        "userAvatarColor": "#7c3aed",
+        "text": "All 16 sections match educational standards and clearly state legal usage boundaries.",
+        "createdAt": "2026-09-20T08:45:00.000Z"
+      }
+    ],
+    "createdAt": "2026-09-19T11:00:00.000Z",
+    "updatedAt": "2026-09-20T08:45:00.000Z",
+    "version": 2
+  },
+  {
+    "id": "task-6",
+    "projectId": "proj-sniffer",
+    "title": "Audit packet payload parsing for memory and buffer safety",
+    "description": "Conduct security review of sniffer.py against malformed packet crashes, oversized frames, and privilege escalation vulnerabilities.",
+    "status": "review",
+    "priority": "urgent",
+    "assigneeId": "user-marcus",
+    "assigneeName": "Marcus Vance",
+    "assigneeAvatarColor": "#7c3aed",
+    "dueDate": "2026-09-24",
+    "tags": [
+      "Audit",
+      "SecOps",
+      "Compliance"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-6-1",
+        "title": "Check signal handler for clean Ctrl+C teardown",
+        "completed": true
+      },
+      {
+        "id": "sub-6-2",
+        "title": "Validate exception catches for PermissionError",
+        "completed": true
+      },
+      {
+        "id": "sub-6-3",
+        "title": "Inspect memory consumption on high PPS stream",
+        "completed": false
+      }
+    ],
+    "comments": [],
+    "createdAt": "2026-09-19T15:00:00.000Z",
+    "updatedAt": "2026-09-20T07:30:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "task-7",
+    "projectId": "proj-sniffer",
+    "title": "Add real-time telemetry export to JSON and CSV",
+    "description": "Permit engineers to dump captured packet streams to structured disk files for post-incident cyber forensics.",
+    "status": "todo",
+    "priority": "medium",
+    "assigneeId": "user-priya",
+    "assigneeName": "Priya Patel",
+    "assigneeAvatarColor": "#059669",
+    "dueDate": "2026-09-27",
+    "tags": [
+      "Forensics",
+      "Export",
+      "JSON"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-7-1",
+        "title": "Create CSV row formatter for packet fields",
+        "completed": false
+      },
+      {
+        "id": "sub-7-2",
+        "title": "Add --export-json CLI flag",
+        "completed": false
+      }
+    ],
+    "comments": [],
+    "createdAt": "2026-09-20T08:00:00.000Z",
+    "updatedAt": "2026-09-20T08:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "task-8",
+    "projectId": "proj-sync",
+    "title": "Establish cross-tab BroadcastChannel real-time sync pipe",
+    "description": "Implement two-way real-time event broadcasting between browser instances so changes reflect instantly without page reload.",
+    "status": "done",
+    "priority": "urgent",
+    "assigneeId": "user-alex",
+    "assigneeName": "Alex Rivera",
+    "assigneeAvatarColor": "#2563eb",
+    "dueDate": "2026-09-22",
+    "tags": [
+      "Real-Time",
+      "BroadcastChannel",
+      "WebSocket"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-8-1",
+        "title": "Initialize BroadcastChannel instance",
+        "completed": true
+      },
+      {
+        "id": "sub-8-2",
+        "title": "Add localStorage storage event fallback",
+        "completed": true
+      },
+      {
+        "id": "sub-8-3",
+        "title": "Implement peer presence heartbeats",
+        "completed": true
+      }
+    ],
+    "comments": [
+      {
+        "id": "c-4",
+        "userId": "user-alex",
+        "userName": "Alex Rivera",
+        "userAvatarColor": "#2563eb",
+        "text": "Sub-millisecond event transmission achieved between active client tabs.",
+        "createdAt": "2026-09-20T09:00:00.000Z"
+      }
+    ],
+    "createdAt": "2026-09-19T10:00:00.000Z",
+    "updatedAt": "2026-09-20T09:00:00.000Z",
+    "version": 1
+  },
+  {
+    "id": "task-9",
+    "projectId": "proj-sync",
+    "title": "Design multi-user optimistic conflict resolution",
+    "description": "Provide monotonic version timestamps and last-write-wins reconciliation for concurrent updates.",
+    "status": "in-progress",
+    "priority": "high",
+    "assigneeId": "user-priya",
+    "assigneeName": "Priya Patel",
+    "assigneeAvatarColor": "#059669",
+    "dueDate": "2026-09-26",
+    "tags": [
+      "Concurrency",
+      "Database",
+      "Reconciliation"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-9-1",
+        "title": "Tag each task mutation with revision number",
+        "completed": true
+      },
+      {
+        "id": "sub-9-2",
+        "title": "Auto-merge non-conflicting comment threads",
+        "completed": false
+      }
+    ],
+    "comments": [],
+    "createdAt": "2026-09-19T14:00:00.000Z",
+    "updatedAt": "2026-09-20T08:15:00.000Z",
+    "version": 1
+  }
+]

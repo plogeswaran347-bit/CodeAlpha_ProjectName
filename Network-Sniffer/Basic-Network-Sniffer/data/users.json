@@ -1,0 +1,26 @@
+[
+  {
+    "id": "user-alex",
+    "name": "Alex Rivera",
+    "email": "alex@networksec.io",
+    "avatarColor": "#2563eb",
+    "role": "admin",
+    "title": "Lead Security Engineer"
+  },
+  {
+    "id": "user-priya",
+    "name": "Priya Patel",
+    "email": "priya@devops.org",
+    "avatarColor": "#059669",
+    "role": "developer",
+    "title": "Sr. Python & Protocol Dev"
+  },
+  {
+    "id": "user-marcus",
+    "name": "Marcus Vance",
+    "email": "marcus@packetanalyst.net",
+    "avatarColor": "#7c3aed",
+    "role": "auditor",
+    "title": "SecOps Telemetry Auditor"
+  }
+]
