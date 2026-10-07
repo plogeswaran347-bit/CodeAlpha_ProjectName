@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Secure User Authentication</h2>
+<p style="color: #94a3b8; font-size: 0.9rem;">
+    Protected by parameterized SQLite queries and scrypt password hashing.
+</p>
+
+{% if error %}
+<div class="alert-error">{{ error }}</div>
+{% endif %}
+
+<form method="POST" action="/login">
+    <!-- CSRF Token rendered via Flask-WTF -->
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Username" autocomplete="username" required>
+    
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Password" autocomplete="current-password" required>
+    
+    <button type="submit" class="btn">Sign In Securely</button>
+</form>
+{% endblock %}

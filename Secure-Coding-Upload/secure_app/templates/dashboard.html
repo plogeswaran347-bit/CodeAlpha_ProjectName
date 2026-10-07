@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>User Dashboard</h2>
+<p style="color: #94a3b8;">Authenticated Session Management & System Status</p>
+
+<div style="background: #1e293b; padding: 1.5rem; border-radius: 8px; border: 1px solid #334155; margin-top: 1.5rem;">
+    <h3 style="margin-top: 0; color: #38bdf8;">Welcome back, {{ user }}!</h3>
+    <p style="color: #cbd5e1;">You are successfully logged into the hardened application.</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+        <div style="background: #0f172a; padding: 1rem; border-radius: 6px; border: 1px solid #334155;">
+            <div style="color: #94a3b8; font-size: 0.85rem;">SESSION STATUS</div>
+            <div style="color: #34d399; font-weight: 600; margin-top: 0.25rem;">Active & Hardened</div>
+            <div style="color: #94a3b8; font-size: 0.8rem; margin-top: 0.25rem;">HttpOnly, SameSite=Lax</div>
+        </div>
+        <div style="background: #0f172a; padding: 1rem; border-radius: 6px; border: 1px solid #334155;">
+            <div style="color: #94a3b8; font-size: 0.85rem;">PROTECTION LEVEL</div>
+            <div style="color: #38bdf8; font-weight: 600; margin-top: 0.25rem;">OWASP ASVS Standard</div>
+            <div style="color: #94a3b8; font-size: 0.8rem; margin-top: 0.25rem;">CSRF, CSP, Parameterized SQL</div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 2rem; display: flex; gap: 1rem;">
+    <a href="/check-password"><button class="btn">Password Evaluator</button></a>
+    <a href="/check-url"><button class="btn">URL Threat Scanner</button></a>
+    <a href="/logout"><button class="btn" style="background: #475569;">Sign Out</button></a>
+</div>
+{% endblock %}

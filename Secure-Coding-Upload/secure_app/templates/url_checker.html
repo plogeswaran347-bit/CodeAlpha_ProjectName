@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Phishing & URL Safety Scanner</h2>
+<p style="color: #94a3b8; font-size: 0.9rem;">
+    Equipped with SSRF mitigation: blocks RFC 1918 private subnets, loopbacks (127.0.0.1), and cloud metadata (169.254.x.x).
+</p>
+
+{% if error %}
+<div class="alert-error">
+    <strong>Security Filter Triggered:</strong> {{ error }}
+</div>
+{% endif %}
+
+<form method="POST" action="/check-url">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    
+    <label>External Public URL (HTTP/HTTPS)</label>
+    <input type="text" name="url" placeholder="https://example.com" value="{{ result.target if result else '' }}" required>
+    <button type="submit" class="btn">Verify URL Target</button>
+</form>
+
+{% if result %}
+<div style="margin-top: 2rem; padding: 1.5rem; background: #052e16; border-radius: 8px; border: 1px solid #14532d;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3 style="color: #86efac; margin: 0;">Verification Passed</h3>
+        <span class="badge-secure">SSRF Safe</span>
+    </div>
+
+    <p><strong>Target URL:</strong> <code>{{ result.target }}</code></p>
+    <p><strong>HTTP Status Code:</strong> <strong style="color: #4ade80;">{{ result.status_code }}</strong></p>
+    <p><strong>Content-Type:</strong> {{ result.content_type }}</p>
+
+    {% if result.body_preview %}
+    <p style="margin-top: 1rem; margin-bottom: 0.3rem;"><strong>Response Preview:</strong></p>
+    <pre style="background: #020617; padding: 1rem; border-radius: 6px; overflow-x: auto; color: #94a3b8; font-size: 0.85rem; border: 1px solid #1e293b;">{{ result.body_preview }}</pre>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

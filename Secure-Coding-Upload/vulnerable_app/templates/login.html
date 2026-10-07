@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>User Login (Vulnerable to SQL Injection)</h2>
+<p style="color: #94a3b8;">Try SQLi bypass payload: <code>admin' OR '1'='1</code> with any password.</p>
+
+{% if error %}
+<div class="alert-error">{{ error }}</div>
+{% endif %}
+
+<!-- Form lacks CSRF token -->
+<form method="POST" action="/login">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="e.g. admin" required>
+    
+    <label>Password</label>
+    <input type="password" name="password" placeholder="e.g. Admin@123" required>
+    
+    <button type="submit" class="btn">Sign In</button>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>User Dashboard (Vulnerable Prototype)</h2>
+<p style="color: #94a3b8;">Dashboard authenticated via SQLi bypass or plaintext password.</p>
+
+<div style="background: #0f172a; padding: 1.5rem; border-radius: 8px; border: 1px solid #475569; margin-top: 1.5rem;">
+    <h3 style="margin-top: 0; color: #ef4444;">Welcome, {{ user }}!</h3>
+    <p style="color: #cbd5e1;">Logged in session without hardened session flags or rotation.</p>
+</div>
+
+<div style="margin-top: 2rem; display: flex; gap: 1rem;">
+    <a href="/check-password"><button class="btn">Password Checker</button></a>
+    <a href="/check-url"><button class="btn">URL Checker</button></a>
+    <a href="/logout"><button class="btn" style="background: #475569;">Logout</button></a>
+</div>
+{% endblock %}

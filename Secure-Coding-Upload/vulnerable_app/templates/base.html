@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberSecurity Utility - Vulnerable Demo</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 0; }
+        nav { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; }
+        nav a { color: #38bdf8; text-decoration: none; margin-right: 1.5rem; font-weight: 500; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 2rem; background: #1e293b; border-radius: 8px; border: 1px solid #334155; }
+        .btn { background: #dc2626; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        input[type="text"], input[type="password"], input[type="email"] { width: 100%; padding: 0.6rem; margin: 0.5rem 0 1rem 0; background: #0f172a; border: 1px solid #475569; color: white; border-radius: 4px; box-sizing: border-box; }
+        .alert-error { background: #7f1d1d; color: #fecaca; padding: 0.75rem; border-radius: 4px; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div><strong>Cyber Utility (Vulnerable Prototype)</strong></div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/check-password">Password Checker</a>
+            <a href="/check-url">Phishing / URL Checker</a>
+            {% if session.get('user') %}
+                <a href="/dashboard">Dashboard ({{ session['user'] }})</a>
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
